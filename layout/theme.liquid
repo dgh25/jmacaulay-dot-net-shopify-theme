@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>{{shop.name}} - {{page_title}}</title>
+
+	{{ 'layout.css'		| asset_url | stylesheet_tag }}
+	{{ 'lightbox/v2/lightbox.css'	| global_asset_url | stylesheet_tag }}
+	{{ 'lightbox/v2/lightbox.js'	| global_asset_url | script_tag }}
+	
+	<script type="text/javascript">
+	var loadingImage = '{{ 'lightbox/v2/loading.gif' | global_asset_url }}';		
+	var closeButton  = '{{ 'lightbox/v2/close.gif' | global_asset_url }}';		
+	</script>
+	
+        <link rel="icon" href="http://18.media.tumblr.com/avatar_79dab8adf3fd_16.png"/>
+
+	<link href="http://feeds.feedburner.com/jmacaulay" title="Feed" rel="alternate" type="application/atom+xml" />
+	
+	<meta name="verify-v1" content="h7ro4KnjrkmjQkP8MSFSnfhGTb3ImmmOSHMd1BN4oy8=" />
+
+	{{ content_for_header }}
+</head>
+
+<body id="page-{{template}}">
+    
+<p class="hide"><a href="#rightsiders">Skip to navigation.</a></p>
+
+  <div id="container">
+  
+  
+<div id="header" class="clearfix">
+  <a href="http://feeds.feedburner.com/jmacaulay" title="Feed" style="float:right"><img src="{{ 'feed-icon.png' | asset_url }}"></a>
+	<h1 id="logo"><a href="/" title="Go Home">{{shop.name}}</a></h1> 
+</div>
+<hr />
+	
+
+<div id="main">
+
+	<div id="searchbox">
+	        <div style="float:left">weblog | <a href="http://tumble.jmacaulay.net">phumblelog</a></div>
+		<form action="/search" method="get">
+			<input id="search-input" type="text" name="q" /> <input type="image" src="{{ 'search_button.gif' | asset_url }}" alt="Search" />
+		</form>
+	</div>
+	
+  	<div id="content">
+		<div id="innercontent">
+		  {{ content_for_layout }}
+	  	</div>
+  	</div>
+    
+	<hr />
+  	<div id="rightsiders">
+      
+      {{ pages.sidebar.content }}
+      
+  	</div>
+
+	<hr /><br style="clear:both;" />
+	
+	  <div id="footer">
+	  	<div class="footerinner">
+			Powered by <a href="http://www.shopify.com" title="Shopify, Hosted E-Commerce">Shopify</a>
+      {% for link in linklists.footer.links %}
+        | {{ link.title | link_to: link.url }}
+      {% endfor %} 
+		</div>
+	  </div>
+	  
+	</div>
+</div>
+
+{{ 'SyntaxHighlighter.css' | asset_url | stylesheet_tag }}
+{{ 'shCombined.js'	| asset_url | script_tag }}
+<script language="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = '{{'clipboard.swf' | asset_url }}';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-209153-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+

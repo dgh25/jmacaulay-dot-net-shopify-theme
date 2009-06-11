@@ -1,0 +1,6 @@
+.DS_Store
+*.orig
+.dotest
+*.log
+*.sqlite3
+*.db
